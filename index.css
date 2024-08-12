@@ -1,19 +1,22 @@
 .calc-buttons {
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .input-screen {
   border: 1px solid black;
   height: 100%;
-  width: 100%;
+  width: 95%;
   margin: auto;
   text-align: right;
   box-sizing: border-box;
   padding: 4%;
+  background-color: white;
+  font-family: "Lora", serif;
 }
 
-body {
+.calc-body {
   margin: auto;
   padding: 4%;
   text-align: center;
@@ -23,6 +26,13 @@ body {
   height: 100%;
   border-radius: 5%;
   box-shadow: 2px 2px 2px 2px grey;
+  background-color: rgb(233, 230, 221);
+  box-sizing: border-box;
+  font-family: "Lora", serif;
+}
+
+h1 {
+  color: rgb(62, 63, 65);
 }
 
 button {
@@ -32,4 +42,8 @@ button {
   padding: 2%;
   font-size: larger;
   box-shadow: 1px 1px 1px 1px grey;
+  background-color: rgb(202, 230, 230);
+  margin: 2%;
+  font-family: "Lora", serif;
+  color: rgb(62, 63, 65);
 }
