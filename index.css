@@ -1,5 +1,6 @@
 .calc-buttons {
   display: flex;
+  justify-content: center;
 }
 
 p {
@@ -11,10 +12,19 @@ p {
 }
 
 body {
-  width: 40%;
-  height: 60%;
   margin: auto;
   padding: 2%;
   text-align: center;
   justify-content: center;
+  border: 1px solid black;
+  width: 80%;
+  height: 100%;
+}
+
+button {
+  display: block;
+  height: 100%;
+  width: 40%;
+  padding: 2%;
+  font-size: larger;
 }
