@@ -1,0 +1,20 @@
+.calc-buttons {
+  display: flex;
+}
+
+p {
+  border: 1px solid black;
+}
+
+.calc-body {
+  border: 1px solid black;
+}
+
+body {
+  width: 40%;
+  height: 60%;
+  margin: auto;
+  padding: 2%;
+  text-align: center;
+  justify-content: center;
+}
