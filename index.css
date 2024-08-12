@@ -3,22 +3,26 @@
   justify-content: center;
 }
 
-p {
+.input-screen {
   border: 1px solid black;
-}
-
-.calc-body {
-  border: 1px solid black;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  text-align: right;
+  box-sizing: border-box;
+  padding: 4%;
 }
 
 body {
   margin: auto;
-  padding: 2%;
+  padding: 4%;
   text-align: center;
   justify-content: center;
   border: 1px solid black;
   width: 80%;
   height: 100%;
+  border-radius: 5%;
+  box-shadow: 2px 2px 2px 2px grey;
 }
 
 button {
@@ -27,4 +31,5 @@ button {
   width: 40%;
   padding: 2%;
   font-size: larger;
+  box-shadow: 1px 1px 1px 1px grey;
 }
