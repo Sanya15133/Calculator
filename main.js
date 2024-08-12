@@ -1,9 +1,9 @@
 "use strict";
 const buttons = document.querySelectorAll("button");
-const inputDiv = document.getElementsByClassName("input-screen");
+const inputDiv = document.getElementById("input-txt");
 buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
-        console.log(button.innerText);
+        inputDiv.innerText += button.innerText;
         event.preventDefault();
     });
 });

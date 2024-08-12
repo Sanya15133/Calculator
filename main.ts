@@ -3,7 +3,7 @@ const inputDiv = document.getElementById("input-txt") as HTMLDivElement;
 
 buttons.forEach((button) => {
   button.addEventListener("click", (event: Event) => {
-    console.log(button.innerText);
+    inputDiv.innerText += button.innerText;
     event.preventDefault();
   });
 });
