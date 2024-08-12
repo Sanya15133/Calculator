@@ -4,7 +4,10 @@ const inputDiv = document.getElementById("input-txt") as HTMLDivElement;
 buttons.forEach((button) => {
   button.addEventListener("click", (event: Event) => {
     event.preventDefault();
-    inputDiv.innerText += button.value;
+    if (button.className === "number") {
+      inputDiv.innerText += parseInt(button.value);
+    } else if (button.className === "operator" && button.value === "+") {
+    }
   });
 });
 
