@@ -4,6 +4,18 @@ const inputDiv = document.getElementById("input-txt");
 buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
         event.preventDefault();
-        inputDiv.innerText += +button.value;
+        inputDiv.innerText += button.value;
     });
 });
+const addNums = (a, b) => {
+    return a + b;
+};
+const multiplyNums = (a, b) => {
+    return a * b;
+};
+const minusNums = (a, b) => {
+    return a - b;
+};
+const divideNums = (a, b) => {
+    return a / b;
+};
