@@ -6,26 +6,7 @@ buttons.forEach((button) => {
     event.preventDefault();
     if (button.className === "number") {
       inputDiv.innerText += parseInt(button.value);
-    } else if (button.className === "operator" && button.value === "+") {
-      inputDiv.innerText += button.value;
-      let numbers = inputDiv.innerText?.split("+");
-      console.log(numbers, "num");
     }
+    inputDiv.innerText += button.value;
   });
 });
-
-const addNums = (a: number, b: number) => {
-  return a + b;
-};
-
-const multiplyNums = (a: number, b: number) => {
-  return a * b;
-};
-
-const minusNums = (a: number, b: number) => {
-  return a - b;
-};
-
-const divideNums = (a: number, b: number) => {
-  return a / b;
-};
