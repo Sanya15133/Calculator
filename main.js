@@ -1,7 +1,10 @@
 "use strict";
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("buttons");
 const inputDiv = document.getElementById("input-txt");
 const operators = ["+", "-", "*", "/", "="];
+let result = 0;
+let isNumber = false;
+let currentOperator;
 const clearButton = document.getElementById("clear");
 clearButton.addEventListener("click", (event) => {
     event.preventDefault();
@@ -10,16 +13,8 @@ clearButton.addEventListener("click", (event) => {
 buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
         event.preventDefault();
-        inputDiv.innerText += button.value;
-        let newArr = [];
-        let sum = inputDiv.innerText;
-        for (let i = 0; i < operators.length; i++) {
-            newArr = sum.split(operators[i]);
-            let num1 = newArr[0];
-            let num2 = newArr[1];
-            console.log(num1, num2);
-            let result = parseInt(num1) + operators[i] + parseInt(num2);
-            console.log({ result });
-        }
+        inputDiv.innerText += button.innerHTML;
+        let sum = inputDiv.innerHTML;
+        console.log(sum);
     });
 });
