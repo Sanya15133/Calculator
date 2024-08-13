@@ -7,6 +7,9 @@ buttons.forEach((button) => {
     if (button.className === "number") {
       inputDiv.innerText += parseInt(button.value);
     } else if (button.className === "operator" && button.value === "+") {
+      inputDiv.innerText += button.value;
+      let numbers = inputDiv.innerText?.split("+");
+      console.log(numbers, "num");
     }
   });
 });
