@@ -22,3 +22,17 @@ buttons.forEach((button) => {
     console.log(sum);
   });
 });
+
+const solveButton = document.getElementById("solve") as HTMLButtonElement;
+
+const calculateSum = (a: number, b: number, operator: string) => {
+  if (operator === "+") {
+    return a + b;
+  } else if (operator === "*") {
+    return a * b;
+  } else if (operator === "/") {
+    return a / b;
+  } else if (operator === "-") {
+    return a - b;
+  }
+};
