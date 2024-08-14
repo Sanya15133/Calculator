@@ -16,7 +16,7 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", (event: Event) => {
     event.preventDefault();
-    inputDiv.innerText += button.innerText;
+    inputDiv.innerText += button.value;
   });
 });
 
@@ -47,7 +47,7 @@ solveButton.addEventListener("click", (event: Event) => {
       let num2 = parseInt(removeEquals);
       let result = calculateSum(num1, num2, currentOperator);
       if (result) {
-        let resultToString = result?.toString();
+        let resultToString = result.toString();
         inputDiv.innerText = resultToString;
       }
     }
