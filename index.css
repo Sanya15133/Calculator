@@ -14,6 +14,8 @@
   padding: 4%;
   background-color: white;
   font-family: "Lora", serif;
+  font-size: larger;
+  font-weight: bold;
 }
 
 .calc-body {
@@ -46,6 +48,7 @@ button {
   margin: 2%;
   font-family: "Lora", serif;
   color: rgb(62, 63, 65);
+  font-weight: bold;
 }
 
 button:active {

@@ -1,8 +1,7 @@
 "use strict";
 const inputDiv = document.getElementById("input-txt");
-const operators = ["+", "-", "*", "/"];
+const operators = ["+", "-", "*", "/", "="];
 let result = 0;
-let isNumber = false;
 let currentOperator;
 const clearButton = document.getElementById("clear");
 clearButton.addEventListener("click", (event) => {
@@ -50,4 +49,27 @@ solveButton.addEventListener("click", (event) => {
             }
         }
     }
+});
+const operatorButtons = document.querySelectorAll(".operator");
+operatorButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+        event.preventDefault();
+        const getScreen = inputDiv.innerText;
+        for (let i = 0; i < operators.length; i++) {
+            currentOperator = operators[i];
+            const strArray = getScreen.split(operators[i]);
+            console.log("strArray:", strArray);
+            console.log("Checking:", strArray[0], strArray[2], strArray[3]);
+            if ((strArray && strArray[0] === operators[i]) ||
+                strArray[2] === operators[i] ||
+                strArray[3] === operators[i]) {
+                console.log("hello");
+                inputDiv.innerText = "";
+                const createAlert = document.createElement("p");
+                createAlert.innerText = "Illegal action performed";
+                const getDiv = document.getElementById("input-error");
+                getDiv.appendChild(createAlert);
+            }
+        }
+    });
 });
