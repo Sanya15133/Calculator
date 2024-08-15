@@ -15,10 +15,39 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", (event: Event) => {
     event.preventDefault();
-    let splitSum: string[];
     inputDiv.innerText += button.value;
     const getScreen: string = inputDiv.innerText;
-    console.log(getScreen, "get");
+    let hasError = false;
+    let currentCharacter: string;
+    let previousCharacter: string;
+    for (let i = 0; i < getScreen.length; i++) {
+      currentCharacter = getScreen[i];
+      previousCharacter = getScreen[i - 1];
+      if (i === 0 && operators.includes(currentCharacter)) {
+        hasError = true;
+        break;
+      }
+      if (
+        i > 0 &&
+        operators.includes(currentCharacter) &&
+        operators.includes(previousCharacter)
+      ) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      inputDiv.innerText = "";
+      const createAlert = document.createElement("p") as HTMLParagraphElement;
+      createAlert.innerText = "Illegal action performed";
+      const getDiv = document.getElementById("input-error") as HTMLDivElement;
+      getDiv.innerHTML = "";
+      getDiv.appendChild(createAlert);
+      setTimeout(() => {
+        inputDiv.innerText = "";
+        getDiv.innerHTML = "";
+      }, 3000);
+    }
   });
 });
 
@@ -55,13 +84,3 @@ solveButton.addEventListener("click", (event: Event) => {
     }
   }
 });
-
-// if (operators.includes(firstCharacter) || operators.includes(lastCharacter)) {
-//   console.log("hello");
-//   inputDiv.innerText = "";
-//   const createAlert = document.createElement("p") as HTMLParagraphElement;
-//   createAlert.innerText = "Illegal action performed";
-//   const getDiv = document.getElementById("input-error") as HTMLDivElement;
-//   getDiv.appendChild(createAlert);
-//   getDiv.remove();
-// }

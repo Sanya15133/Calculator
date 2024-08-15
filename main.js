@@ -13,15 +13,37 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
         event.preventDefault();
-        let splitSum;
         inputDiv.innerText += button.value;
         const getScreen = inputDiv.innerText;
-        for (let i = 0; i < operators.length; i++) {
-            currentOperator = operators[i];
-            splitSum = getScreen.split(currentOperator);
-            console.log(splitSum, "split");
+        let hasError = false;
+        let currentCharacter;
+        let previousCharacter;
+        for (let i = 0; i < getScreen.length; i++) {
+            currentCharacter = getScreen[i];
+            previousCharacter = getScreen[i - 1];
+            if (i === 0 && operators.includes(currentCharacter)) {
+                hasError = true;
+                break;
+            }
+            if (i > 0 &&
+                operators.includes(currentCharacter) &&
+                operators.includes(previousCharacter)) {
+                hasError = true;
+                break;
+            }
         }
-        console.log(getScreen, "get");
+        if (hasError) {
+            inputDiv.innerText = "";
+            const createAlert = document.createElement("p");
+            createAlert.innerText = "Illegal action performed";
+            const getDiv = document.getElementById("input-error");
+            getDiv.innerHTML = "";
+            getDiv.appendChild(createAlert);
+            setTimeout(() => {
+                inputDiv.innerText = "";
+                getDiv.innerHTML = "";
+            }, 3000);
+        }
     });
 });
 const solveButton = document.getElementById("solve");
@@ -58,12 +80,3 @@ solveButton.addEventListener("click", (event) => {
         }
     }
 });
-// if (operators.includes(firstCharacter) || operators.includes(lastCharacter)) {
-//   console.log("hello");
-//   inputDiv.innerText = "";
-//   const createAlert = document.createElement("p") as HTMLParagraphElement;
-//   createAlert.innerText = "Illegal action performed";
-//   const getDiv = document.getElementById("input-error") as HTMLDivElement;
-//   getDiv.appendChild(createAlert);
-//   getDiv.remove();
-// }
