@@ -1,7 +1,6 @@
 const inputDiv = document.getElementById("input-txt") as HTMLDivElement;
 
 const operators: string[] = ["+", "-", "*", "/", "="];
-let result: number = 0;
 let currentOperator: string;
 
 const clearButton = document.getElementById("clear") as HTMLButtonElement;
