@@ -13,7 +13,15 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
         event.preventDefault();
+        let splitSum;
         inputDiv.innerText += button.value;
+        const getScreen = inputDiv.innerText;
+        for (let i = 0; i < operators.length; i++) {
+            currentOperator = operators[i];
+            splitSum = getScreen.split(currentOperator);
+            console.log(splitSum, "split");
+        }
+        console.log(getScreen, "get");
     });
 });
 const solveButton = document.getElementById("solve");
@@ -50,26 +58,12 @@ solveButton.addEventListener("click", (event) => {
         }
     }
 });
-const operatorButtons = document.querySelectorAll(".operator");
-operatorButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-        event.preventDefault();
-        const getScreen = inputDiv.innerText;
-        for (let i = 0; i < operators.length; i++) {
-            currentOperator = operators[i];
-            const strArray = getScreen.split(operators[i]);
-            console.log("strArray:", strArray);
-            console.log("Checking:", strArray[0], strArray[2], strArray[3]);
-            if ((strArray && strArray[0] === operators[i]) ||
-                strArray[2] === operators[i] ||
-                strArray[3] === operators[i]) {
-                console.log("hello");
-                inputDiv.innerText = "";
-                const createAlert = document.createElement("p");
-                createAlert.innerText = "Illegal action performed";
-                const getDiv = document.getElementById("input-error");
-                getDiv.appendChild(createAlert);
-            }
-        }
-    });
-});
+// if (operators.includes(firstCharacter) || operators.includes(lastCharacter)) {
+//   console.log("hello");
+//   inputDiv.innerText = "";
+//   const createAlert = document.createElement("p") as HTMLParagraphElement;
+//   createAlert.innerText = "Illegal action performed";
+//   const getDiv = document.getElementById("input-error") as HTMLDivElement;
+//   getDiv.appendChild(createAlert);
+//   getDiv.remove();
+// }

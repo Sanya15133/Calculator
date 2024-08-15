@@ -1,6 +1,6 @@
 const inputDiv = document.getElementById("input-txt") as HTMLDivElement;
 
-const operators = ["+", "-", "*", "/", "="];
+const operators: string[] = ["+", "-", "*", "/", "="];
 let result: number = 0;
 let currentOperator: string;
 
@@ -15,7 +15,10 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", (event: Event) => {
     event.preventDefault();
+    let splitSum: string[];
     inputDiv.innerText += button.value;
+    const getScreen: string = inputDiv.innerText;
+    console.log(getScreen, "get");
   });
 });
 
@@ -36,7 +39,7 @@ const calculateSum = (a: number, b: number, operator: string) => {
 solveButton.addEventListener("click", (event: Event) => {
   event.preventDefault();
   let sum: string = inputDiv.innerHTML;
-  let splitSum;
+  let splitSum: string[];
   for (let i = 0; i < operators.length; i++) {
     currentOperator = operators[i];
     splitSum = sum.split(operators[i]);
@@ -53,29 +56,12 @@ solveButton.addEventListener("click", (event: Event) => {
   }
 });
 
-const operatorButtons = document.querySelectorAll(".operator");
-
-operatorButtons.forEach((button) => {
-  button.addEventListener("click", (event: Event) => {
-    event.preventDefault();
-    const getScreen: string = inputDiv.innerText;
-    for (let i = 0; i < operators.length; i++) {
-      currentOperator = operators[i];
-      const strArray = getScreen.split(operators[i]);
-      console.log("strArray:", strArray);
-      console.log("Checking:", strArray[0], strArray[2], strArray[3]);
-      if (
-        (strArray && strArray[0] === operators[i]) ||
-        strArray[2] === operators[i] ||
-        strArray[3] === operators[i]
-      ) {
-        console.log("hello");
-        inputDiv.innerText = "";
-        const createAlert = document.createElement("p") as HTMLParagraphElement;
-        createAlert.innerText = "Illegal action performed";
-        const getDiv = document.getElementById("input-error") as HTMLDivElement;
-        getDiv.appendChild(createAlert);
-      }
-    }
-  });
-});
+// if (operators.includes(firstCharacter) || operators.includes(lastCharacter)) {
+//   console.log("hello");
+//   inputDiv.innerText = "";
+//   const createAlert = document.createElement("p") as HTMLParagraphElement;
+//   createAlert.innerText = "Illegal action performed";
+//   const getDiv = document.getElementById("input-error") as HTMLDivElement;
+//   getDiv.appendChild(createAlert);
+//   getDiv.remove();
+// }
