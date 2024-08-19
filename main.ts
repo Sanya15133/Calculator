@@ -75,7 +75,7 @@ solveButton.addEventListener("click", (event: Event) => {
       let num1: number = parseInt(splitSum[0]);
       let removeEquals = splitSum[1].replace("=", "");
       let num2: number = parseInt(removeEquals);
-      let result = calculateSum(num1, num2, currentOperator);
+      let result: number = calculateSum(num1, num2, currentOperator);
       if (result) {
         let resultToString: string = result.toString();
         inputDiv.innerText = resultToString;
