@@ -55,3 +55,7 @@ button:active {
   background-color: rgb(162, 162, 184);
   color: white;
 }
+
+body {
+  box-sizing: border-box;
+}
