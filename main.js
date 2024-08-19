@@ -1,7 +1,6 @@
 "use strict";
 const inputDiv = document.getElementById("input-txt");
 const operators = ["+", "-", "*", "/", "="];
-let result = 0;
 let currentOperator;
 const clearButton = document.getElementById("clear");
 clearButton.addEventListener("click", (event) => {

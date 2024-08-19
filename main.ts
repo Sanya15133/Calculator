@@ -16,7 +16,7 @@ buttons.forEach((button) => {
     event.preventDefault();
     inputDiv.innerText += button.value;
     const getScreen: string = inputDiv.innerText;
-    let hasError = false;
+    let hasError: boolean = false;
     let currentCharacter: string;
     let previousCharacter: string;
     for (let i = 0; i < getScreen.length; i++) {
@@ -52,7 +52,7 @@ buttons.forEach((button) => {
 
 const solveButton = document.getElementById("solve") as HTMLButtonElement;
 
-const calculateSum = (a: number, b: number, operator: string) => {
+const calculateSum = (a: number, b: number, operator: string): any => {
   if (operator === "+") {
     return a + b;
   } else if (operator === "*") {
