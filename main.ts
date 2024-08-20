@@ -14,7 +14,7 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", (event: Event): void => {
     event.preventDefault();
-    inputDiv.innerText += button.value;
+    inputDiv.innerText += button.value as string;
     const getScreen: string = inputDiv.innerText;
     let hasError: boolean = false;
     let currentCharacter: string;
