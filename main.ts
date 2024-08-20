@@ -42,7 +42,7 @@ buttons.forEach((button) => {
       const getDiv = document.getElementById("input-error") as HTMLDivElement;
       getDiv.innerHTML = "";
       getDiv.appendChild(createAlert);
-      setTimeout(() => {
+      setTimeout((): void => {
         inputDiv.innerText = "";
         getDiv.innerHTML = "";
       }, 3000);
