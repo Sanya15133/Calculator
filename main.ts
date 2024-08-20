@@ -4,7 +4,7 @@ const operators: string[] = ["+", "-", "*", "/", "="];
 let currentOperator: string;
 
 const clearButton = document.getElementById("clear") as HTMLButtonElement;
-clearButton.addEventListener("click", (event: Event) => {
+clearButton.addEventListener("click", (event: Event): void => {
   event.preventDefault();
   inputDiv.innerText = "";
   return;
@@ -12,7 +12,7 @@ clearButton.addEventListener("click", (event: Event) => {
 
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
-  button.addEventListener("click", (event: Event) => {
+  button.addEventListener("click", (event: Event): void => {
     event.preventDefault();
     inputDiv.innerText += button.value;
     const getScreen: string = inputDiv.innerText;
@@ -64,7 +64,7 @@ const calculateSum = (a: number, b: number, operator: string): any => {
   }
 };
 
-solveButton.addEventListener("click", (event: Event) => {
+solveButton.addEventListener("click", (event: Event): void => {
   event.preventDefault();
   let sum: string = inputDiv.innerHTML;
   let splitSum: string[];
