@@ -51,6 +51,7 @@ const calculateSum = (a, b, operator) => {
         return a + b;
     }
     else if (operator === "*") {
+        console.log('hello times');
         return a * b;
     }
     else if (operator === "*" && a == 0 || b == 0) {
