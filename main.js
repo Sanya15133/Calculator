@@ -53,6 +53,10 @@ const calculateSum = (a, b, operator) => {
     else if (operator === "*") {
         return a * b;
     }
+    else if (operator === "*" && a == 0 || b == 0) {
+        console.log('0');
+        return 0;
+    }
     else if (operator === "/") {
         return a / b;
     }

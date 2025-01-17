@@ -57,6 +57,9 @@ const calculateSum = (a: number, b: number, operator: string): any => {
     return a + b;
   } else if (operator === "*") {
     return a * b;
+  } else if (operator === "*" && a == 0 || b == 0) {
+    console.log('0')
+    return 0;
   } else if (operator === "/") {
     return a / b;
   } else if (operator === "-") {
