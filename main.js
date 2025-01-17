@@ -50,13 +50,13 @@ const calculateSum = (a, b, operator) => {
     if (operator === "+") {
         return a + b;
     }
-    else if (operator === "*") {
-        console.log('hello times');
-        return a * b;
-    }
-    else if (operator === "*" && a == 0 || b == 0) {
-        console.log('0');
+    else if ((operator === "*" && a == 0) || b == 0) {
+        console.log("0");
         return 0;
+    }
+    else if (operator === "*") {
+        console.log("hello times");
+        return a * b;
     }
     else if (operator === "/") {
         return a / b;
