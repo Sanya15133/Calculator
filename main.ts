@@ -55,11 +55,7 @@ const solveButton = document.getElementById("solve") as HTMLButtonElement;
 const calculateSum = (a: number, b: number, operator: string): any => {
   if (operator === "+") {
     return a + b;
-  } else if ((operator === "*" && a == 0) || b == 0) {
-    console.log("0");
-    return 0;
   } else if (operator === "*") {
-    console.log("hello times");
     return a * b;
   } else if (operator === "/") {
     return a / b;
@@ -80,7 +76,10 @@ solveButton.addEventListener("click", (event: Event): void => {
       let removeEquals = splitSum[1].replace("=", "");
       let num2: number = parseInt(removeEquals);
       let result: number = calculateSum(num1, num2, currentOperator);
-      if (result) {
+      if (result === 0) {
+        let resultToString: string = result.toString();
+        inputDiv.innerText = resultToString;
+      } else if (result) {
         let resultToString: string = result.toString();
         inputDiv.innerText = resultToString;
       }

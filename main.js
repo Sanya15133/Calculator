@@ -50,12 +50,7 @@ const calculateSum = (a, b, operator) => {
     if (operator === "+") {
         return a + b;
     }
-    else if ((operator === "*" && a == 0) || b == 0) {
-        console.log("0");
-        return 0;
-    }
     else if (operator === "*") {
-        console.log("hello times");
         return a * b;
     }
     else if (operator === "/") {
@@ -77,7 +72,11 @@ solveButton.addEventListener("click", (event) => {
             let removeEquals = splitSum[1].replace("=", "");
             let num2 = parseInt(removeEquals);
             let result = calculateSum(num1, num2, currentOperator);
-            if (result) {
+            if (result === 0) {
+                let resultToString = result.toString();
+                inputDiv.innerText = resultToString;
+            }
+            else if (result) {
                 let resultToString = result.toString();
                 inputDiv.innerText = resultToString;
             }
