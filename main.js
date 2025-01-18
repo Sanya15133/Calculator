@@ -72,13 +72,14 @@ solveButton.addEventListener("click", (event) => {
             let removeEquals = splitSum[1].replace("=", "");
             let num2 = parseInt(removeEquals);
             let result = calculateSum(num1, num2, currentOperator);
-            if (result === 0) {
-                let resultToString = result.toString();
-                inputDiv.innerText = resultToString;
+            if (currentOperator === "/" && num1 === 0 || num2 === 0) {
+                inputDiv.innerText = "Can't divide by 0";
             }
-            else if (result) {
+            else if (result || result === 0) {
                 let resultToString = result.toString();
-                inputDiv.innerText = resultToString;
+                if (resultToString) {
+                    inputDiv.innerText = resultToString;
+                }
             }
         }
     }
